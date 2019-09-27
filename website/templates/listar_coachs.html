@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <marquee><h1>Lista de suas frases perfeitas</h1></marquee>
+    {% for item in listar_coachs %}
+        <p><strong>Nome do Coach:</strong> {{item.nome}}</p>
+        <p><strong>Motive-se:</strong> {{item.frase}}</p>
+        <p><strong>Quem foi sua inspiration:</strong>{{item.inspirador}}</p>
+        <a href='/coachs/delete/{{item.id}}'>deletar</a>
+        <hr>
+    {% endfor %}
+{% endblock %}
